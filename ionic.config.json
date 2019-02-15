@@ -1,6 +1,9 @@
 {
   "name": "vlsmApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
   "type": "angular",
   "id": "f3afec12"
 }

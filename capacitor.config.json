@@ -1,0 +1,6 @@
+{
+  "appId": "com.marcojunior.vlsm",
+  "appName": "vlsmApp",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}

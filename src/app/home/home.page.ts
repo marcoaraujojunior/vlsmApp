@@ -3,6 +3,18 @@ declare var Subnet;
 
 import { Component, Input, ViewChild } from '@angular/core';
 import { ToastController } from '@ionic/angular';
+import { ThemeService } from '../theme.service';
+
+const themes = {
+  day: {
+    primary: '#3880ff',
+    secondary: '#0cd1e8',
+    tertiary: '#7044ff',
+    medium: '#3880ff',
+    dark: '#f4f5f8',
+    light: '#f4f5f8'
+  },
+};
 
 @Component({
   selector: 'app-home',
@@ -12,14 +24,13 @@ import { ToastController } from '@ionic/angular';
 
 export class HomePage {
 
-    constructor(public toastController: ToastController) {}
+    constructor(public toastController: ToastController, private theme: ThemeService) {}
 
     inputs = [];
     results = [];
+    activeTheme = '';
     @ViewChild('numSubnet') numSubnet ;
     @ViewChild('majorNetwork') majorNetwork ;
-
-
 
     async presentToast(message) {
         const toast = await this.toastController.create({
@@ -31,13 +42,18 @@ export class HomePage {
         toast.present();
     }
 
-
     searchSize(nameKey, myArray){
         for (var i=0; i < myArray.length; i++) {
             if (myArray[i].size === nameKey) {
                 return myArray[i];
             }
         }
+    }
+
+    toggleTheme() {
+        let name = this.activeTheme == '' ? 'day' : '';
+        this.activeTheme = name;
+        this.theme.setTheme(themes[name]);
     }
 
     resetCalc(){
@@ -58,7 +74,7 @@ export class HomePage {
             this.inputs.push({name: '', size: ''});
         }
     }
-    
+
     calc(){
         if(!this.validate()){
             return;

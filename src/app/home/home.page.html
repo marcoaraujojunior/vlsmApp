@@ -1,5 +1,10 @@
 <ion-header>
     <ion-toolbar color="medium">
+        <ion-buttons slot="primary">
+            <ion-button color="light" (click)="toggleTheme();">
+                <ion-icon slot="icon-only" name="moon"></ion-icon>
+            </ion-button>
+        </ion-buttons>
         <ion-title>VLSM Calc</ion-title>
     </ion-toolbar>
 </ion-header>
@@ -36,19 +41,19 @@
                         <ion-card-title>Name: {{subnet.Name}}</ion-card-title>
                         <ion-card-subtitle>Hosts: {{subnet.Size}}</ion-card-subtitle>
                     </ion-card-header>
-                    <ion-item>
+                    <ion-item color="light">
                         <ion-label>Network: {{subnet.Network}}</ion-label>
                     </ion-item>
-                    <ion-item>
+                    <ion-item color="light">
                         <ion-label>First IP: {{subnet.FirstIP}}</ion-label>
                     </ion-item>
-                    <ion-item>
+                    <ion-item color="light">
                         <ion-label>Last IP: {{subnet.LastIP}}</ion-label>
                     </ion-item>
-                    <ion-item>
+                    <ion-item color="light">
                         <ion-label>Broadcast: {{subnet.Broadcast}}</ion-label>
                     </ion-item>
-                    <ion-item>
+                    <ion-item color="light">
                         <ion-label>Subnet Mask: {{subnet.Mask}}</ion-label>
                     </ion-item>
                 </span>

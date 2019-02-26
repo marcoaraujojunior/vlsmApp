@@ -35,24 +35,13 @@ export class HomePage {
     constructor(public toastController: ToastController, private theme: ThemeService) {
         this.masks = {
             ipAddress: {
-                mask: 'AAA.BBB.CCC.DDD/EE',
+                mask: '000.000.000.000/00',
                 blocks: {
-                    AAA: {
+                    '000' : {
                         mask: /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
                     },
-                    BBB: {
-                        mask: /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
-                    },
-                    CCC: {
-                        mask: /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
-                    },
-                    DDD: {
-                        mask: /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
-                    },
-                    EE: {
-                        mask: IMask.MaskedRange,
-                        from: 1,
-                        to: 30,
+                    '00': {
+                        mask: /^(3[0]|2[0-9]|1[0-9]|[1-9]?)$/
                     },
                 }
             }

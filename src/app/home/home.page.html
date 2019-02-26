@@ -14,7 +14,7 @@
     <ion-card>
         <ion-item color="medium">
             <ion-label position="floating">Major Network</ion-label>
-            <ion-input type="text" #majorNetwork [imask]="{ mask: masks.ipAddress.mask, blocks: masks.ipAddress.blocks }" [unmask]="true" (accept)="onAccept" (complete)="onComplete"></ion-input>
+            <ion-input type="tel" #majorNetwork [imask]="{ mask: masks.ipAddress.mask, blocks: masks.ipAddress.blocks }"></ion-input>
         </ion-item>
     </ion-card>
     <ion-card>

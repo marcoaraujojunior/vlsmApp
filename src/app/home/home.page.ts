@@ -172,4 +172,17 @@ export class HomePage {
 
         return true;
     }
+
+    isSubnetInputTableEmpty(){
+        let empty = false;
+        if (this.inputs.length <= 0) {
+            return true;
+        }
+        for (var i=0; i < this.inputs.length; i++) {
+            if (isNaN(parseInt(this.inputs[i].size)) || this.inputs[i].size < 0) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

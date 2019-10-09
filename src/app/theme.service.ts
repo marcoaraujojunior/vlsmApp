@@ -54,9 +54,6 @@ function CSSTextGenerator(colors) {
 
   const shadeRatio = 0.65;
   const tintRatio = 0.65;
-  console.log('ion-color-light-contrast', contrast(light).hex());
-  console.log('Color(light).isDark():', Color(light).isDark());
-  console.log('$${contrast(light)}:', `$${contrast(light)}`);
 
   return `
     --ion-color-base: ${light};

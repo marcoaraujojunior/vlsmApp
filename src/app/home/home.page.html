@@ -5,12 +5,11 @@
                 <ion-icon slot="icon-only" name="moon"></ion-icon>
             </ion-button>
         </ion-buttons>
-        <ion-title>VLSM Calc</ion-title>
+        <ion-title>VLSM Calc by Marco De Araujo</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content padding color="dark" overflow-scroll="true">
-
     <ion-card>
         <ion-item color="medium">
             <ion-label position="floating">Major Network</ion-label>
@@ -20,7 +19,7 @@
     <ion-card>
         <ion-item color="medium">
             <ion-label position="floating">Number of Subnets</ion-label>
-            <ion-input type="number" #numSubnet numSubnet.value='' ></ion-input>
+            <ion-input type="number" #numSubnet numSubnet.value='' (focusout)="addSubnets()"></ion-input>
             <ion-button color="dark" slot="end" (click)="addSubnets();">List</ion-button>
         </ion-item>
     </ion-card>
@@ -62,8 +61,8 @@
     </ion-card>
 </ion-content>
 <ion-footer>
-    <ion-toolbar color="dark">
-        <ion-button *ngIf="showSizes();" expand="full" shape="round" color="medium" (click)="calc();">Calculate</ion-button>
+    <ion-toolbar color="dark" *ngIf="!isSubnetInputTableEmpty() || showSubnets();">
+        <ion-button *ngIf="!isSubnetInputTableEmpty();" expand="full" shape="round" color="medium" (click)="calc();">Calculate</ion-button>
         <ion-button *ngIf="showSubnets();" expand="full" shape="round" color="medium" (click)="resetCalc();">Reset</ion-button>
     </ion-toolbar>
 </ion-footer>

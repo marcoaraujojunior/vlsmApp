@@ -1,9 +1,7 @@
-declare var Network;
-declare var Subnet;
-
 import { Component, Input, ViewChild } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { ThemeService } from '../theme.service';
+import * as Subnet from 'vlsmcalc';
 
 const themes = {
   day: {
